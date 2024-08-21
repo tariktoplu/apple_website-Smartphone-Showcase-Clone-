@@ -16,6 +16,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- This project is copy of a this officel [apple website](https://www.apple.com/iphone-15-pro/)
+- This project is copy of a this offical [apple website](https://www.apple.com/iphone-15-pro/)
 - I made up this project with with [this tutorial video](https://www.youtube.com/watch?v=RbxHZwFtRT4&list=PL6QREj8te1P6wX9m5KnicnDVEucbOPsqR&index=120)
 - The process of developing this project allowed me to improve myself in react, tailwind CSS and threeGSAP
