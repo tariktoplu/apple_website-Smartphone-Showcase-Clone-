@@ -1,19 +1,31 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap";
 import ModelView from "./ModelView";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { yellowImg } from "../utils";
+import * as THREE from 'three';
+import { Canvas } from "@react-three/fiber";
+import { View } from "@react-three/drei";
 
 const Model = () => {
-    const [setsize, setSetsize] = useState('small');
+    const [size, setsize] = useState('small');
     const [model, setmodel] = useState({
         title: 'iPhone 15 Pro in Naturel Titanium',
         color: ['#8F8A81','#FFE7B', '#6F6C64'],
         img: yellowImg,
     })  
 
-    //camera control for the model view
-    
+    // camera control for the model view
+    const cameraControlSmall = useRef();
+    const cameraControlLarge = useRef();
+
+    // model
+    const small = useRef(new THREE.Group());
+    const large = useRef(new THREE.Group());
+
+    // rotation
+    const [smallRotation, setSmallRotation] = useState(0);
+    const [largeRotation, setLargeRotation] = useState(0);
 
     useGSAP(() => {
         gsap.to('#heading', {
@@ -30,7 +42,28 @@ const Model = () => {
             </h1>
             <div className="flex flex-col items-center mt-5">
                 <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
-                    <ModelView/>
+                    <ModelView
+                        index= {1}
+                        groupRef = {small}
+                        gsapType = "view1"
+                        controlRef = {cameraControlSmall}
+                        setRotationState = {setSmallRotation}
+                        item = {model}
+                        size = {size}
+                    />
+                    <ModelView
+                    index= {2}
+                    groupRef = {large}
+                    gsapType = "view2"
+                    controlRef = {cameraControlLarge}
+                    setRotationState = {setLargeRotation}
+                    item = {model}
+                    size = {size}
+                    />
+
+                    <Canvas>
+                        <View.Port/>
+                    </Canvas>
                 </div>
             </div>
         </div>
