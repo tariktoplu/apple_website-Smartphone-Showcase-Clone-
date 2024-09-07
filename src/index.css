@@ -9,7 +9,7 @@
 }
 
 body {
-  color: rgb(255, 255, 255);
+  color: white;
   width: 100dvw;
   overflow-x: hidden;
   height: 100%;
@@ -43,7 +43,7 @@ canvas {
   }
 
   .color-container {
-    @apply flex items-center justify-center px-4 py-4 rounded-full bg-gray-300 backdrop-blur
+    @apply flex items-center justify-center px-4 py-4 rounded-full bg-gray-300 backdrop-blur 
   }
 
   .size-btn-container {
